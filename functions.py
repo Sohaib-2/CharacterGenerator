@@ -61,3 +61,18 @@ def load_characters():
         for line in file:
             characters.append(line.strip())
     return characters
+
+
+def generate_story(character):
+    prompt = f"Write a short story on this character {character} [add appropriate emojis throughout the story]." \
+             f" (Word count: 150)"
+    response = openai.Completion.create(
+        engine="text-davinci-003",
+        prompt=prompt,
+        max_tokens=300,
+        temperature=0.7,
+        n=1,
+        stop=None,
+    )
+    story = response.choices[0].text.strip()
+    st.write(f"**Short Story** \n\n {story}")

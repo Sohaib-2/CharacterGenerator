@@ -38,11 +38,10 @@ BACKGROUNDS = [
 ]
 
 
-
 def main():
-    st.title("Character Generator")
+    st.title("CharmCraft")
 
-    page = st.sidebar.selectbox("Select page:", ["Generate Character", "Dialogue"])
+    page = st.sidebar.selectbox("Select page:", ["Generate Character", "Dialogue", "Generate Story"])
 
     if page == "Generate Character":
         st.header("Generate Character")
@@ -84,6 +83,22 @@ def main():
                         break
         except FileNotFoundError:
             st.warning("No characters available for dialogue. Generate a character first.")
+    elif page == "Generate Story":
+        st.header("Story Generator")
+        try:
+            characters = load_characters()
+            char_names = [line.split()[0] for line in characters]
+            if characters:
+                selected_character = st.selectbox("Select character:", char_names)
+
+                for character in characters:
+                    if selected_character in character:
+                        if st.button("Generate Story"):
+                            generate_story(character)
+                        break
+        except FileNotFoundError:
+            st.warning("No characters available. Generate a character first.")
+
 
 if __name__ == "__main__":
     main()
