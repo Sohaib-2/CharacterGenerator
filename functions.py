@@ -2,8 +2,8 @@ import streamlit as st
 import openai
 
 
-def generate_character(gender, age, appearance, personality_traits, skills, backgrounds):
-    prompt = f"Generate a character.\n\nGender: {gender}\nAge: {age}\nAppearance: {appearance}\nPersonality traits: {personality_traits}\nSkills: {skills}\nBackground: {backgrounds}\n\nCharacter:"
+def generate_character(gender, name, age, appearance, personality_traits, skills, backgrounds):
+    prompt = f"Generate a character.\n\nGender: {gender}\nName: {name}\nAge: {age}\nAppearance: {appearance}\nPersonality traits: {personality_traits}\nSkills: {skills}\nBackground: {backgrounds}\n\nCharacter:"
     response = openai.Completion.create(
         engine="text-davinci-003",
         prompt=prompt,

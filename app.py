@@ -53,9 +53,10 @@ def main():
         selected_personality_traits = st.multiselect("Select personality traits:", PERSONALITY_TRAITS)
         selected_skills = st.multiselect("Select skills:", SKILLS)
         selected_backgrounds = st.multiselect("Select background:", BACKGROUNDS)
+        char_name = st.text_input("Name Your Character:")
 
         if st.button("Generate Character"):
-            character = generate_character(selected_gender, selected_age, selected_appearances,
+            character = generate_character(selected_gender, char_name, selected_age, selected_appearances,
                                            selected_personality_traits, selected_skills, selected_backgrounds)
             st.subheader("Character Generated!")
             st.write(character)
@@ -73,12 +74,12 @@ def main():
         st.header("Dialogue")
         try:
             characters = load_characters()
-
+            char_names = [line.split()[0] for line in characters]
             if characters:
-                selected_character = st.selectbox("Select character:", characters)
+                selected_character = st.selectbox("Select character:", char_names)
 
                 for character in characters:
-                    if character == selected_character:
+                    if selected_character in character:
                         generate_dialogue(character)
                         break
         except FileNotFoundError:
