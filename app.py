@@ -19,14 +19,14 @@ PERSONALITY_TRAITS = [
     "Honest", "Independent", "Wise"
 ]
 SKILLS = [
-    "Swordsmanship", "Archery", "Magic", "Leadership", "Stealth", "Persuasion",
-    "Cooking", "Singing", "Dancing", "Tracking", "Coding", "Data Analysis",
-    "Artificial Intelligence", "Cybersecurity", "Blockchain", "Virtual Reality",
-    "Augmented Reality", "Machine Learning", "Mobile App Development",
-    "Robotics", "Video Editing", "Photography", "Graphic Design",
-    "Foreign Languages", "Negotiation", "Problem Solving", "Public Speaking",
-    "Time Management", "Critical Thinking"
+    "Archery", "Cooking", "Data Analysis", "Virtual Reality", "Machine Learning",
+    "Photography", "Graphic Design", "Public Speaking", "Parkour", "Quantum Physics",
+    "Woodworking", "Yoga", "Skydiving", "Gardening", "Speed Reading", "Beekeeping",
+    "Painting", "Psychology", "Skiing", "Carpentry", "Songwriting", "Chess",
+    "Fashion Design", "Climbing", "Equestrianism", "Bodybuilding", "Sailing",
+    "Bowling", "Poetry Writing", "Sudoku"
 ]
+
 BACKGROUNDS = [
     "Noble lineage", "Raised in a small village", "Orphaned",
     "Trained by a master", "Exiled from their homeland", "Scholarly background",

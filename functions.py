@@ -36,8 +36,7 @@ def generate_dialogue(character_description):
                                           f"I want you act as:[{character_description}]."
                                           f"You engage in conversation with others, showcasing your unique personality, "
                                           f"sharing your knowledge, and using your skills to overcome challenges. "
-                                          f"Interact with me as {extract_character_name(character_description)} "
-                                          f"and let's see what adventures unfold!"},
+                                          f"Interact with me as {extract_character_name(character_description)}"},
             {"role": "user", "content": user_message}
         ]
 
@@ -64,12 +63,13 @@ def load_characters():
 
 
 def generate_story(character):
-    prompt = f"Write a short story on this character {character} [add appropriate emojis throughout the story]." \
-             f" (Word count: 150)"
+    prompt = f"Write an exciting short story on this character {character} with a bit of suspense, write title in bold" \
+             f" [add appropriate emojis throughout the story]." \
+             f" (Max Word count: 400)"
     response = openai.Completion.create(
         engine="text-davinci-003",
         prompt=prompt,
-        max_tokens=300,
+        max_tokens=400,
         temperature=0.7,
         n=1,
         stop=None,
