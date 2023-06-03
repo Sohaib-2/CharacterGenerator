@@ -39,6 +39,7 @@ BACKGROUNDS = [
 
 
 def main():
+    st.set_page_config(page_icon="🎭", page_title="Charm Craft")
     st.title("CharmCraft")
 
     page = st.sidebar.selectbox("Select page:", ["Generate Character", "Dialogue", "Generate Story"])
